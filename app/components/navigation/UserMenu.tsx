@@ -23,7 +23,7 @@ export default function UserMenu({ onLogout }: UserMenuProps) {
     <div className="relative">
       <button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-        className="flex items-center space-x-1 text-black p-2 hover:bg-gray-50 transition-colors rounded-lg cursor-pointer"
+        className="flex items-center space-x-1 text-black  hover:bg-gray-50 transition-colors rounded-lg cursor-pointer"
       >
         <User className="w-6 h-6" />
         <ChevronDown className="w-4 h-4" />

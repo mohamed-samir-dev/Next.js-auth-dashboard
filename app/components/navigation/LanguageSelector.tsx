@@ -11,7 +11,7 @@ export default function LanguageSelector() {
     <div className="relative">
       <button
         onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-        className="text-black flex items-center space-x-1 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+        className="text-black flex items-center space-x-1  hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
       >
         <span className="text-black text-sm font-medium">{selectedLanguage}</span>
         <ChevronDown className="w-4 h-4" />
