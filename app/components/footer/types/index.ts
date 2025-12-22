@@ -9,7 +9,7 @@ export interface FooterSection {
 }
 
 export interface SocialLink {
-  icon: React.ComponentType;
+  icon: React.ComponentType<{ className?: string }>;
   href: string;
   label: string;
 }
