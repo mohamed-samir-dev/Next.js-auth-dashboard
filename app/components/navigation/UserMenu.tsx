@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, User, Settings, LogOut } from 'lucide-react';
 
 interface UserMenuProps {
@@ -9,6 +9,33 @@ interface UserMenuProps {
 
 export default function UserMenu({ onLogout }: UserMenuProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [dropdownStyle, setDropdownStyle] = useState({});
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (isDropdownOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownStyle({
+        position: 'fixed' as const,
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+        zIndex: 9999
+      });
+    }
+  }, [isDropdownOpen]);
+
+  const toggleDropdown = () => {
+    if (!isDropdownOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownStyle({
+        position: 'fixed' as const,
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+        zIndex: 9999
+      });
+    }
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   const handleLogout = () => {
     if (onLogout) {
@@ -22,7 +49,8 @@ export default function UserMenu({ onLogout }: UserMenuProps) {
   return (
     <div className="relative">
       <button
-        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        ref={buttonRef}
+        onClick={toggleDropdown}
         className="flex items-center space-x-1 text-black  hover:bg-gray-50 transition-colors rounded-lg cursor-pointer"
       >
         <User className="w-6 h-6" />
@@ -30,7 +58,7 @@ export default function UserMenu({ onLogout }: UserMenuProps) {
       </button>
 
       {isDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+        <div style={dropdownStyle} className="w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
           <a href="#" className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
             <User className="w-4 h-4" />
             <span>Profile</span>
