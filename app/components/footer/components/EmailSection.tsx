@@ -3,36 +3,19 @@ import { socialLinks } from "../data";
 
 export default function EmailSection() {
   return (
-    <div className="mt-[50px]">
-      <h3 className="text-lg font-semibold mb-4">Send Email</h3>
-      <div className="relative mb-6">
-        <input
-          type="email"
-          placeholder="Email address"
-          className="bg-white text-gray-900 placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#BE968E]"
-          style={{
-            width: '369px',
-            height: '62px',
-            borderRadius: '12px',
-            border: '0.5px solid rgba(0,0,0,0.2)',
-            paddingLeft: '16px',
-            paddingRight: '150px'
-          }}
-        />
-        <button 
-          className="bg-[#6D4C41] hover:bg-[#5D4037] text-white text-sm font-medium transition-colors"
-          style={{
-            width: '135px',
-            height: '46px',
-            top: '8px',
-            left: '226px',
-            borderRadius: '12px',
-            border: '0.5px solid rgba(255,255,255,0.2)',
-            position: 'absolute'
-          }}
-        >
-          Send
-        </button>
+    <div className="mb-6 sm:mb-0">
+      <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Send Email</h3>
+      <div className="relative mb-4 sm:mb-6">
+        <div className="relative">
+          <input
+            type="email"
+            placeholder="Email address"
+            className="w-full bg-white text-gray-900 placeholder-gray-500 text-xs sm:text-sm px-3 sm:px-4 py-3 sm:py-4 pr-20 sm:pr-24 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#BE968E]"
+          />
+          <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#a9827a] hover:bg-[#5D4037] text-white text-xs sm:text-sm font-medium px-3 sm:px-5 py-3 rounded-md transition-colors">
+            Send
+          </button>
+        </div>
       </div>
       <SocialIcons socialLinks={socialLinks} />
     </div>
