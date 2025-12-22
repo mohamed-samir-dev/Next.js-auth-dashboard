@@ -21,13 +21,13 @@ export default function ImageGallery({
   onThumbnailClick,
 }: ImageGalleryProps) {
   return (
-    <div className="space-y-6">
-      <div className="relative bg-gray-50 rounded-2xl overflow-hidden w-[524px] h-[565px] shadow-sm">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="relative bg-gray-50 rounded-2xl overflow-hidden w-full max-w-[700px] mx-auto aspect-square sm:aspect-auto sm:h-[350px] md:h-[420px] lg:h-[480px] shadow-sm">
         <Image
           src={selectedImage}
           alt="Product"
           fill
-          className="object-cover"
+          className="object-contain"
         />
 
         <div className="absolute top-4 left-0 right-0 flex gap-2 px-4 z-10">
@@ -45,10 +45,10 @@ export default function ImageGallery({
 
         <button
           onClick={onPrevious}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors z-10"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors z-10"
         >
           <svg
-            className="w-6 h-6 text-gray-600"
+            className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -64,10 +64,10 @@ export default function ImageGallery({
 
         <button
           onClick={onNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-[#BE968E] rounded-full flex items-center justify-center hover:bg-[#A8856B] transition-colors z-10"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-[#BE968E] rounded-full flex items-center justify-center hover:bg-[#A8856B] transition-colors z-10"
         >
           <svg
-            className="w-6 h-6 text-white"
+            className="w-5 h-5 sm:w-6 sm:h-6 text-white"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -82,8 +82,8 @@ export default function ImageGallery({
         </button>
       </div>
 
-      <div className="relative w-[523px] h-[183px]">
-        <div className="flex gap-4 h-full overflow-hidden">
+      <div className="relative w-full max-w-[700px] mx-auto h-[100px] sm:h-[120px] md:h-[140px]">
+        <div className="flex gap-2 sm:gap-4 h-full overflow-hidden">
           {thumbnails
             .slice(carouselStartIndex, carouselStartIndex + 3)
             .map((thumb, index) => {
@@ -105,7 +105,7 @@ export default function ImageGallery({
                     src={thumb.src}
                     alt={thumb.color}
                     fill
-                    className={`object-cover ${
+                    className={`object-contain ${
                       isThird && hiddenCount > 0 ? "opacity-30" : ""
                     }`}
                   />
