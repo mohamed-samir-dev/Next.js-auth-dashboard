@@ -1,0 +1,15 @@
+export interface FooterLink {
+  label: string;
+  href: string;
+}
+
+export interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+export interface SocialLink {
+  icon: React.ComponentType;
+  href: string;
+  label: string;
+}
