@@ -21,11 +21,24 @@ export default function LanguageSelector() {
     }
   }, [isLangDropdownOpen]);
 
+  const toggleDropdown = () => {
+    if (!isLangDropdownOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownStyle({
+        position: 'fixed' as const,
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+        zIndex: 9999
+      });
+    }
+    setIsLangDropdownOpen(!isLangDropdownOpen);
+  };
+
   return (
     <div className="relative">
       <button
         ref={buttonRef}
-        onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+        onClick={toggleDropdown}
         className="text-black flex items-center space-x-1  hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
       >
         <span className="text-black text-sm font-medium">{selectedLanguage}</span>
