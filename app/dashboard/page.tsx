@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Skeleton from 'react-loading-skeleton';
 import Navigation from '../components/navigation/Navigation';
 import DashboardContent from '../components/DashboardContent';
 
@@ -30,7 +31,7 @@ export default function Dashboard() {
       console.error('Failed to fetch user data:', err);
       setUserName('User');
     } finally {
-      setLoading(false);
+      setTimeout(() => setLoading(false), 1000);
     }
   }, [router]);
 
@@ -51,10 +52,35 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-gray-50 to-blue-50">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600 font-medium">Loading your dashboard...</p>
+      <div className="min-h-screen bg-gray-50">
+        {/* Navigation Skeleton */}
+        <div className="bg-white shadow-md border-b border-gray-150">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center h-18 py-3">
+              <div className="flex items-center space-x-4">
+                <Skeleton height={40} width={120} />
+                <div className="flex space-x-6">
+                  <Skeleton height={20} width={60} />
+                  <Skeleton height={20} width={80} />
+                  <Skeleton height={20} width={70} />
+                </div>
+              </div>
+              <div className="flex items-center space-x-4 ml-auto">
+                <Skeleton circle height={32} width={32} />
+                <Skeleton circle height={32} width={32} />
+                <Skeleton height={32} width={80} />
+                <Skeleton circle height={32} width={32} />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Dashboard Content Skeleton */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="mb-8">
+            <Skeleton height={36} width={300} className="mb-2" />
+            <Skeleton height={20} width={400} />
+          </div>
         </div>
       </div>
     );
