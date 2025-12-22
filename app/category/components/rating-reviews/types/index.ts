@@ -6,4 +6,5 @@ export interface Rating {
 export interface Review {
   name: string;
   time: string;
+  rating: number;
 }
