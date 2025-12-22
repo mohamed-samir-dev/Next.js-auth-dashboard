@@ -47,3 +47,22 @@ body {
 * {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
+
+/* Custom breakpoint for 1000px */
+@media (min-width: 1001px) {
+  .desktop-1000\:flex {
+    display: flex;
+  }
+  .desktop-1000\:hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .mobile-1000\:block {
+    display: block;
+  }
+  .mobile-1000\:hidden {
+    display: none;
+  }
+}
