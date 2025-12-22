@@ -14,12 +14,12 @@ export default function ColorSelector({
   return (
     <div>
       <p className="text-sm font-semibold text-black mb-3">Colors</p>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-3 sm:gap-4">
         {colors.map((color) => (
           <div key={color.name} className="flex flex-col items-center gap-1">
             <button
               onClick={() => onColorSelect(color.name)}
-              className={`w-10 h-10 rounded-full border-2 transition-all ${
+              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 transition-all ${
                 selectedColor === color.name
                   ? "border-gray-900 scale-110"
                   : "border-gray-300 hover:border-gray-400"
