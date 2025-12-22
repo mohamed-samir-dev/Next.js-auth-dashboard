@@ -13,6 +13,7 @@ import ColorSelector from "./components/product-details/components/ColorSelector
 import QuantitySelector from "./components/product-details/components/QuantitySelector";
 import Breadcrumb from "./components/product-details/components/Breadcrumb";
 import RatingReviews from "./components/rating-reviews/RatingReviews";
+import { ProductGrid, products } from "./components/product-grid";
 
 export default function CategoryPage() {
   const [quantity, setQuantity] = useState(1);
@@ -153,6 +154,8 @@ export default function CategoryPage() {
           <RatingReviews />
         </div>
       </div>
+      
+      <ProductGrid products={products} />
     </div>
   );
 }
