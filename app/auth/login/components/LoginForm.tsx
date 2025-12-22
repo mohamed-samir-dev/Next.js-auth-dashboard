@@ -1,11 +1,32 @@
 'use client';
 
+import Skeleton from 'react-loading-skeleton';
 import PasswordInput from './PasswordInput';
 import LoadingButton from './LoadingButton';
 import { useLoginForm } from '../hooks/useLoginForm';
 
 export default function LoginForm() {
   const { formData, setFormData, loading, error, handleSubmit } = useLoginForm();
+
+  if (loading) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <Skeleton height={16} width={100} className="mb-2" />
+          <Skeleton height={48} />
+        </div>
+        <div>
+          <Skeleton height={16} width={80} className="mb-2" />
+          <Skeleton height={48} />
+        </div>
+        <div className="flex items-center justify-between">
+          <Skeleton height={16} width={100} />
+          <Skeleton height={16} width={120} />
+        </div>
+        <Skeleton height={48} />
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
