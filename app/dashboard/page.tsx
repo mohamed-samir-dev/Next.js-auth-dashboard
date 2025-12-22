@@ -55,31 +55,33 @@ export default function Dashboard() {
       <div className="min-h-screen bg-gray-50">
         {/* Navigation Skeleton */}
         <div className="bg-white shadow-md border-b border-gray-150">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center h-18 py-3">
-              <div className="flex items-center space-x-4">
-                <Skeleton height={40} width={120} />
-                <div className="flex space-x-6">
-                  <Skeleton height={20} width={60} />
-                  <Skeleton height={20} width={80} />
-                  <Skeleton height={20} width={70} />
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+            <div className="flex items-center h-16 sm:h-18 py-3">
+              <div className="flex items-center space-x-2 sm:space-x-4">
+                <Skeleton height={32} width={80} className="sm:h-10 sm:w-28" />
+                <div className="hidden md:flex space-x-4 lg:space-x-6">
+                  <Skeleton height={20} width={50} className="sm:w-16" />
+                  <Skeleton height={20} width={60} className="sm:w-20" />
+                  <Skeleton height={20} width={55} className="sm:w-18" />
                 </div>
               </div>
-              <div className="flex items-center space-x-4 ml-auto">
-                <Skeleton circle height={32} width={32} />
-                <Skeleton circle height={32} width={32} />
-                <Skeleton height={32} width={80} />
-                <Skeleton circle height={32} width={32} />
+              <div className="flex items-center space-x-2 sm:space-x-4 ml-auto">
+                <div className="hidden sm:flex items-center space-x-2 sm:space-x-4">
+                  <Skeleton circle height={24} width={24} className="sm:h-8 sm:w-8" />
+                  <Skeleton circle height={24} width={24} className="sm:h-8 sm:w-8" />
+                  <Skeleton height={24} width={60} className="sm:h-8 sm:w-20" />
+                </div>
+                <Skeleton circle height={24} width={24} className="sm:h-8 sm:w-8" />
               </div>
             </div>
           </div>
         </div>
         
         {/* Dashboard Content Skeleton */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="mb-8">
-            <Skeleton height={36} width={300} className="mb-2" />
-            <Skeleton height={20} width={400} />
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
+          <div className="mb-6 sm:mb-8">
+            <Skeleton height={28} width={250} className="mb-2 sm:h-9 sm:w-80" />
+            <Skeleton height={16} width={300} className="sm:h-5 sm:w-96" />
           </div>
         </div>
       </div>
