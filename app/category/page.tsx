@@ -22,9 +22,7 @@ export default function CategoryPage() {
   const [cartCount, setCartCount] = useState(0);
   const [wishlistCount, setWishlistCount] = useState(0);
   const [selectedColor, setSelectedColor] = useState("blue");
-  const [selectedImage, setSelectedImage] = useState(
-    "/481bdbb752097f2110b43983b0269f31d9258d1b(1).png"
-  );
+  const [selectedImage, setSelectedImage] = useState(thumbnails[0].src);
   const [carouselStartIndex, setCarouselStartIndex] = useState(0);
   const [selectedType, setSelectedType] = useState("cotton");
   const [selectedSize, setSelectedSize] = useState("2xl");
@@ -110,92 +108,92 @@ export default function CategoryPage() {
         {/* Navigation Skeleton */}
         <div className="bg-white shadow-md border-b border-gray-150">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center h-18 py-3">
-              <div className="flex items-center space-x-4">
-                <Skeleton height={40} width={120} />
-                <div className="flex space-x-6">
-                  <Skeleton height={20} width={60} />
-                  <Skeleton height={20} width={80} />
-                  <Skeleton height={20} width={70} />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center h-auto sm:h-18 py-3 gap-3 sm:gap-0">
+              <div className="flex items-center space-x-4 w-full sm:w-auto">
+                <Skeleton height={32} width={100} className="sm:h-[40px] sm:w-[120px]" />
+                <div className="hidden sm:flex space-x-6">
+                  <Skeleton height={18} width={50} className="sm:h-[20px] sm:w-[60px]" />
+                  <Skeleton height={18} width={70} className="sm:h-[20px] sm:w-[80px]" />
+                  <Skeleton height={18} width={60} className="sm:h-[20px] sm:w-[70px]" />
                 </div>
               </div>
-              <div className="flex items-center space-x-4 ml-auto">
-                <Skeleton circle height={32} width={32} />
-                <Skeleton circle height={32} width={32} />
-                <Skeleton height={32} width={80} />
-                <Skeleton circle height={32} width={32} />
+              <div className="flex items-center space-x-3 sm:space-x-4 ml-auto">
+                <Skeleton circle height={28} width={28} className="sm:h-[32px] sm:w-[32px]" />
+                <Skeleton circle height={28} width={28} className="sm:h-[32px] sm:w-[32px]" />
+                <Skeleton height={28} width={70} className="sm:h-[32px] sm:w-[80px]" />
+                <Skeleton circle height={28} width={28} className="sm:h-[32px] sm:w-[32px]" />
               </div>
             </div>
           </div>
         </div>
 
         {/* Product Header Skeleton */}
-        <div className="bg-gray-50 py-4">
+        <div className="bg-gray-50 py-3 sm:py-4">
           <div className="max-w-7xl mx-auto px-4">
-            <Skeleton height={32} width={200} />
+            <Skeleton height={28} width={180} className="sm:h-[32px] sm:w-[200px]" />
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8">
           {/* Breadcrumb Skeleton */}
-          <div className="flex space-x-2 mb-8">
+          <div className="flex space-x-2 mb-6 sm:mb-8">
             <Skeleton height={16} width={60} />
             <Skeleton height={16} width={20} />
             <Skeleton height={16} width={80} />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
             {/* Image Gallery Skeleton */}
-            <div className="space-y-4">
-              <Skeleton height={400} />
+            <div className="space-y-3 sm:space-y-4">
+              <Skeleton height={300} className="sm:h-[400px] md:h-[500px] lg:h-[565px]" />
               <div className="flex space-x-2">
                 {[...Array(4)].map((_, i) => (
-                  <Skeleton key={i} height={80} width={80} />
+                  <Skeleton key={i} height={60} width={60} className="sm:h-[80px] sm:w-[80px]" />
                 ))}
               </div>
             </div>
 
             {/* Product Info Skeleton */}
-            <div className="space-y-6">
-              <Skeleton height={32} width={300} />
-              <div className="flex space-x-4">
-                <Skeleton height={24} width={80} />
-                <Skeleton height={24} width={60} />
+            <div className="space-y-4 sm:space-y-6 lg:pl-8">
+              <Skeleton height={28} width={250} className="sm:h-[32px] sm:w-[300px]" />
+              <div className="flex space-x-3 sm:space-x-4">
+                <Skeleton height={20} width={70} className="sm:h-[24px] sm:w-[80px]" />
+                <Skeleton height={20} width={50} className="sm:h-[24px] sm:w-[60px]" />
               </div>
-              <Skeleton height={60} count={3} />
+              <Skeleton height={50} count={3} className="sm:h-[60px]" />
               <div className="flex space-x-2">
                 {[...Array(5)].map((_, i) => (
-                  <Skeleton key={i} circle height={32} width={32} />
+                  <Skeleton key={i} circle height={28} width={28} className="sm:h-[32px] sm:w-[32px]" />
                 ))}
               </div>
-              <Skeleton height={48} />
+              <Skeleton height={40} className="sm:h-[48px]" />
             </div>
           </div>
 
           {/* Reviews Skeleton */}
-          <div className="mt-12 space-y-4">
-            <Skeleton height={28} width={200} />
+          <div className="mt-8 lg:mt-12 space-y-4">
+            <Skeleton height={24} width={180} className="sm:h-[28px] sm:w-[200px]" />
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="border rounded-lg p-4 space-y-2">
+              <div key={i} className="border rounded-lg p-3 sm:p-4 space-y-2">
                 <div className="flex items-center space-x-2">
-                  <Skeleton circle height={32} width={32} />
-                  <Skeleton height={16} width={120} />
+                  <Skeleton circle height={28} width={28} className="sm:h-[32px] sm:w-[32px]" />
+                  <Skeleton height={14} width={100} className="sm:h-[16px] sm:w-[120px]" />
                 </div>
-                <Skeleton height={16} count={2} />
+                <Skeleton height={14} count={2} className="sm:h-[16px]" />
               </div>
             ))}
           </div>
         </div>
 
         {/* Product Grid Skeleton */}
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <Skeleton height={32} width={200} className="mb-8" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+          <Skeleton height={28} width={180} className="mb-6 sm:mb-8 sm:h-[32px] sm:w-[200px]" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[...Array(8)].map((_, i) => (
               <div key={i} className="space-y-2">
-                <Skeleton height={200} />
-                <Skeleton height={16} width={150} />
-                <Skeleton height={20} width={80} />
+                <Skeleton height={180} className="sm:h-[200px]" />
+                <Skeleton height={14} width={130} className="sm:h-[16px] sm:w-[150px]" />
+                <Skeleton height={18} width={70} className="sm:h-[20px] sm:w-[80px]" />
               </div>
             ))}
           </div>
@@ -209,9 +207,9 @@ export default function CategoryPage() {
       <Navigation cartCount={cartCount} wishlistCount={wishlistCount} />
       <ProductHeader />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8">
         <Breadcrumb />
-        <div className="grid lg:grid-cols-2 items-start pt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start pt-4 sm:pt-8">
           <ImageGallery
             selectedImage={selectedImage}
             thumbnails={thumbnails}
@@ -225,7 +223,7 @@ export default function CategoryPage() {
             }}
           />
 
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8 lg:pl-8">
             <ProductInfo
               basePrice={basePrice}
               originalPrice={originalPrice}
@@ -256,7 +254,7 @@ export default function CategoryPage() {
           </div>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-8 lg:mt-12">
           <RatingReviews />
         </div>
       </div>
