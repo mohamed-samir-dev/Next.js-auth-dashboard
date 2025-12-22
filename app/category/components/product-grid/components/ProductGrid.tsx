@@ -13,33 +13,51 @@ export default function ProductGrid({ products }: ProductGridProps) {
   const [swiperRef, setSwiperRef] = useState<SwiperType>();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="mb-6" style={{ width: '165px', height: '42px' }}>
-        <h2 className="text-[25px] font-semibold text-black relative" style={{ gap: '2px' }}>
+    <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 py-4 xs:py-6 sm:py-8">
+      <div className="mb-3 xs:mb-4 sm:mb-6">
+        <h2 className="text-lg xs:text-xl sm:text-[25px] font-semibold text-black relative">
           Similar Items
-          <div className="absolute bottom-0 left-0 w-8 h-1 translate-y-1" style={{ backgroundColor: '#BE968E' }}></div>
+          <div className="absolute bottom-0 left-0 w-6 xs:w-8 h-0.5 xs:h-1 translate-y-1" style={{ backgroundColor: '#BE968E' }}></div>
         </h2>
       </div>
       
-      <div className="relative mb-20">
+      <div className="relative mb-8 xs:mb-12 sm:mb-16 lg:mb-20">
         <Swiper
           onSwiper={setSwiperRef}
           modules={[Navigation]}
-          spaceBetween={8}
-          slidesPerView={3.2}
+          spaceBetween={6}
+          slidesPerView={1.1}
           className="h-auto"
           breakpoints={{
+            375: {
+              slidesPerView: 1.2,
+              spaceBetween: 8,
+            },
+            480: {
+              slidesPerView: 1.5,
+              spaceBetween: 10,
+            },
             640: {
               slidesPerView: 2.2,
+              spaceBetween: 12,
+            },
+            768: {
+              slidesPerView: 2.5,
+              spaceBetween: 14,
             },
             1024: {
               slidesPerView: 3.2,
+              spaceBetween: 16,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 18,
             },
           }}
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
-              <div className="h-full w-90">
+              <div className="h-full w-full">
                 <ProductCard product={product} />
               </div>
             </SwiperSlide>
@@ -47,19 +65,19 @@ export default function ProductGrid({ products }: ProductGridProps) {
         </Swiper>
       </div>
 
-      <div className="flex justify-center items-center mx-auto" style={{ width: '112px', height: '50px', gap: '12px' }}>
+      <div className="flex justify-center items-center mx-auto gap-2 xs:gap-3">
         <button
           onClick={() => swiperRef?.slidePrev()}
-          className="w-12 h-12 bg-gray-50 border border-gray-300 rounded-full flex items-center justify-center cursor-pointer shadow-sm hover:bg-gray-100 transition-colors"
+          className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gray-50 border border-gray-300 rounded-full flex items-center justify-center cursor-pointer shadow-sm hover:bg-gray-100 transition-colors"
         >
-          <AiOutlineLeft className="w-5 h-5 text-black" />
+          <AiOutlineLeft className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-black" />
         </button>
         
         <button
           onClick={() => swiperRef?.slideNext()}
-          className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center bg-[#BE968E] cursor-pointer shadow-sm hover:bg-[#A8857A] transition-colors"
+          className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 border border-gray-300 rounded-full flex items-center justify-center bg-[#BE968E] cursor-pointer shadow-sm hover:bg-[#A8857A] transition-colors"
         >
-          <AiOutlineRight className="w-5 h-5 text-white" />
+          <AiOutlineRight className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-white" />
         </button>
       </div>
     </div>
