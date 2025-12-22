@@ -51,7 +51,7 @@ export default function Verify() {
       } else {
         setError(result.message || 'Verification failed');
       }
-    } catch (err) {
+    } catch {
       setError('Network error occurred');
     } finally {
       setLoading(false);
