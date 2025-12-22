@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Thumbnail } from "./product-details/types/types";
+import { Thumbnail } from "../types/types";
 
 interface ImageGalleryProps {
   selectedImage: string;
