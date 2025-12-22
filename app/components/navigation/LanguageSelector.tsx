@@ -1,15 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export default function LanguageSelector() {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('EN');
+  const [dropdownStyle, setDropdownStyle] = useState({});
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (isLangDropdownOpen && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      setDropdownStyle({
+        position: 'fixed',
+        top: rect.bottom + 8,
+        right: window.innerWidth - rect.right,
+        zIndex: 9999
+      });
+    }
+  }, [isLangDropdownOpen]);
 
   return (
     <div className="relative">
       <button
+        ref={buttonRef}
         onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
         className="text-black flex items-center space-x-1  hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
       >
@@ -18,7 +33,7 @@ export default function LanguageSelector() {
       </button>
       
       {isLangDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-24 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+        <div style={dropdownStyle} className="w-24 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
           {selectedLanguage === 'EN' ? (
             <button
               onClick={() => { setSelectedLanguage('AR'); setIsLangDropdownOpen(false); }}
