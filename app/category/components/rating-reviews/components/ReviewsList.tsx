@@ -19,28 +19,26 @@ export default function ReviewsList({ reviews }: ReviewsListProps) {
   };
 
   return (
-    <div className="mt-12 space-y-6">
+    <div className="mt-8 sm:mt-12 space-y-4 sm:space-y-6">
       {reviews.slice(0, visibleComments).map((review, index) => (
         <ReviewItem key={index} review={review} />
       ))}
       
-      <div className="flex justify-center mt-8 gap-4">
+      <div className="flex flex-col sm:flex-row justify-center mt-6 sm:mt-8 gap-3 sm:gap-4">
         {visibleComments < reviews.length && (
           <button 
             onClick={loadMoreComments}
-            className="text-[#BE968E]" 
-            style={{ width: '207px', height: '53px', borderRadius: '12px', padding: '16px', gap: '8px', backgroundColor: '#ECECEC66', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            className="w-full sm:w-[207px] h-12 sm:h-[53px] rounded-[12px] px-4 bg-[#ECECEC66] text-[#BE968E] border-none cursor-pointer flex items-center justify-center hover:bg-gray-200 transition-colors"
           >
-            View More Comments
+            <span className="text-sm sm:text-base">View More Comments</span>
           </button>
         )}
         {visibleComments > 4 && (
           <button 
             onClick={showLessComments}
-            className="text-[#BE968E]" 
-            style={{ width: '207px', height: '53px', borderRadius: '12px', padding: '16px', gap: '8px', backgroundColor: '#ECECEC66', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            className="w-full sm:w-[207px] h-12 sm:h-[53px] rounded-[12px] px-4 bg-[#ECECEC66] text-[#BE968E] border-none cursor-pointer flex items-center justify-center hover:bg-gray-200 transition-colors"
           >
-            Show Less
+            <span className="text-sm sm:text-base">Show Less</span>
           </button>
         )}
       </div>
