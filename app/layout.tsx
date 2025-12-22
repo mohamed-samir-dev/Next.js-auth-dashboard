@@ -5,7 +5,6 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import ConditionalFooter from "./components/ConditionalFooter";
 import Analytics from "./components/Analytics";
 import { defaultMetadata } from "./lib/metadata";
-import manifest from ".manifest"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
