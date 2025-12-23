@@ -6,7 +6,7 @@ import { HomeIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export default function NotFound() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-lg text-slate-600 max-w-md mx-auto leading-relaxed"
             >
-              The page you're looking for doesn't exist or has been moved to a different location.
+              The page you&rsquo;re looking for doesn&rsquo;t exist or has been moved to a different location.
             </motion.p>
 
             {/* Professional Note */}
