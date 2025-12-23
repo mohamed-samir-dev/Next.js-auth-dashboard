@@ -48,7 +48,7 @@ export function useRegisterForm() {
       } else {
         setError(result.message || 'Unable to create account. Please check your information and try again.');
       }
-    } catch (err) {
+    } catch {
       setError('Unable to connect to our servers. Please check your internet connection and try again.');
     } finally {
       setLoading(false);

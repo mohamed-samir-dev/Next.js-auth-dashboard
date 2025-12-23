@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import 'react-loading-skeleton/dist/skeleton.css';
 import ConditionalFooter from "./components/ConditionalFooter";
-import Analytics from "./components/Analytics";
 import { defaultMetadata } from "./lib/metadata";
 
 const geistSans = Geist({
@@ -141,7 +140,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <Analytics />
         {children}
         <ConditionalFooter />
       </body>

@@ -35,7 +35,7 @@ export function useLoginForm() {
       } else {
         setError(result.message || 'Invalid email or password. Please check your credentials and try again.');
       }
-    } catch (err) {
+    } catch {
       setError('Unable to connect to the server. Please check your internet connection and try again.');
     } finally {
       setLoading(false);
