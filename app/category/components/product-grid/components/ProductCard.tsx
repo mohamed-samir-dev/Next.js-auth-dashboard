@@ -13,12 +13,12 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="bg-gray-50 p-2 xs:p-3 sm:p-4 border border-gray-200 rounded-lg">
         <div className="relative">
           {product.discount && (
-            <div className="absolute bg-white text-[#BE968E] text-[10px] xs:text-xs font-medium border z-10" style={{
-              width: '48px',
-              height: '20px',
-              top: '6px',
-              left: '1px',
-              borderRadius: '4px',
+            <div className="absolute bg-white text-[#BE968E] text-xs font-medium border z-10" style={{
+              width: '74px',
+              height: '30px',
+              top: '1px',
+              left: '0px',
+              borderRadius: '8px',
               border: '1px solid',
               display: 'flex',
               alignItems: 'center',
