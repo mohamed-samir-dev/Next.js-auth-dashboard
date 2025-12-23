@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl ='https://auth-dashboard.vercel.app'
+  const baseUrl ='https://next-js-auth-dashboard.vercel.app/'
   
   return [
     {

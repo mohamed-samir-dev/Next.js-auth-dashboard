@@ -20,9 +20,9 @@ const geistMono = Geist_Mono({
 const siteConfig = {
   name: "Auth Dashboard",
   description: "Secure authentication dashboard with modern UI/UX design. Manage your account, profile, and access protected content with ease.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://auth-dashboard.vercel.app",
-  ogImage: "/og-image.jpg",
-  creator: "@authdashboard",
+  url:  "https://next-js-auth-dashboard.vercel.app/",
+  ogImage: "/logo.webp",
+  creator: "https://github.com/mohamed-samir-dev",
   keywords: ["authentication", "dashboard", "nextjs", "react", "typescript", "tailwind", "secure login", "user management"]
 };
 
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: "Auth Dashboard Team" }],
+  authors: [{ name: "mohamed-samir-dev" }],
   creator: siteConfig.creator,
-  publisher: "Auth Dashboard",
+  publisher: "mohamed-samir-dev",
   formatDetection: {
     email: false,
     address: false,
@@ -83,11 +83,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
-    yandex: process.env.YANDEX_VERIFICATION,
-    yahoo: process.env.YAHOO_VERIFICATION,
-  },
 };
 
 export const viewport: Viewport = {
@@ -105,28 +100,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: siteConfig.name,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web Browser",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
-  };
+  
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
