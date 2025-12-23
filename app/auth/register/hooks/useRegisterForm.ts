@@ -46,10 +46,10 @@ export function useRegisterForm() {
         localStorage.setItem('temp_token', result.data.token);
         router.push('/auth/verify');
       } else {
-        setError(result.message || 'Registration failed');
+        setError(result.message || 'Unable to create account. Please check your information and try again.');
       }
     } catch (err) {
-      setError('Network error occurred');
+      setError('Unable to connect to our servers. Please check your internet connection and try again.');
     } finally {
       setLoading(false);
     }
