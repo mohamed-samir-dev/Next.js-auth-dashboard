@@ -34,7 +34,7 @@ A modern, secure authentication dashboard built with Next.js 16, React 19, TypeS
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone <git@github.com:mohamed-samir-dev/Next.js-auth-dashboard.git>
    cd Next.js-auth-dashboard
    ```
 
