@@ -53,7 +53,7 @@ export default function Verify() {
       if (response.ok && result.data && result.data.token) {
         localStorage.removeItem('temp_token');
         localStorage.setItem('auth_token', result.data.token);
-        router.push('/auth/login');
+        router.push('/dashboard');
       } else {
         setError(result.message || 'Verification failed');
       }
