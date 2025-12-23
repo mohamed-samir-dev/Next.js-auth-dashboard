@@ -33,10 +33,10 @@ export function useLoginForm() {
         localStorage.setItem('auth_token', result.data.token);
         router.push('/dashboard');
       } else {
-        setError(result.message || 'Login failed');
+        setError(result.message || 'Invalid email or password. Please check your credentials and try again.');
       }
     } catch (err) {
-      setError('Network error occurred');
+      setError('Unable to connect to the server. Please check your internet connection and try again.');
     } finally {
       setLoading(false);
     }
