@@ -12,18 +12,18 @@ export default function LoginForm() {
     return (
       <div className="space-y-4 sm:space-y-6">
         <div>
-          <Skeleton height={14} width={80} className="mb-2 sm:!h-4 sm:!w-24" />
-          <Skeleton height={40} className="sm:!h-12" />
+          <Skeleton height={14} width={80} className="mb-2 sm:h-4! sm:w-24!" />
+          <Skeleton height={40} className="sm:h-12!" />
         </div>
         <div>
-          <Skeleton height={14} width={60} className="mb-2 sm:!h-4 sm:!w-20" />
-          <Skeleton height={40} className="sm:!h-12" />
+          <Skeleton height={14} width={60} className="mb-2 sm:h-4! sm:w-20!" />
+          <Skeleton height={40} className="sm:h-12!" />
         </div>
         <div className="flex items-center justify-between">
-          <Skeleton height={14} width={80} className="sm:!h-4 sm:!w-24" />
-          <Skeleton height={14} width={100} className="sm:!h-4 sm:!w-32" />
+          <Skeleton height={14} width={80} className="sm:h-4! sm:w-24!" />
+          <Skeleton height={14} width={100} className="sm:h-4! sm:w-32!" />
         </div>
-        <Skeleton height={40} className="sm:!h-12" />
+        <Skeleton height={40} className="sm:h-12!" />
       </div>
     );
   }
@@ -60,7 +60,7 @@ export default function LoginForm() {
       </div>
 
       {error && (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm break-words">
+        <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 sm:px-4 sm:py-3 rounded-lg text-xs sm:text-sm wrap-break-words">
           {error}
         </div>
       )}
